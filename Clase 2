@@ -1,0 +1,50 @@
+s.boot
+
+//formas de onda 
+s.meter
+s.scope
+
+// Sin Osc
+
+{SinOsc.ar (500,0,0.1)!2}.play
+
+//LFTri
+{LFTri.ar (550,0,0.7)!2}.play
+//SAW
+{Saw.ar (600,0.1)!2}.play
+//Pulse
+{Pulse.ar (500,0.5,0.1)!2}.play
+
+//WhiteNoise
+{WhiteNoise.ar (0.1)!2}.play
+
+//formas de ver las ondas con scope
+
+//SynthDef
+
+SynthDef.help 
+
+//Llamar a un Synthdef
+
+//PinkNoise
+{PinkNoise.ar (0.1)!2}.play
+
+
+//GrayNoise
+{GrayNoise.ar (0.1)!2}.play
+
+//BrownNoise
+{BrownNoise.ar (0.1)!2}.play
+(
+
+SynthDef (\misinte,{|frec=440, amp=0.5|
+	
+	var sen;
+	sen=SinOsc.ar (frec,0,amp);
+	Out.ar(0,sen)
+	
+}).add
+)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+a=Synth(\misinte,[\frec,400])
+a.free
